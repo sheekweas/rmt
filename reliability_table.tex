@@ -1,0 +1,31 @@
+\begin{table}[t]
+\centering
+\caption{Paired Comparison, Stability and Robustness (Macro-F1). $\Delta$ = RoBERTa minus LR. Bootstrap intervals resample test hotels (2,000 replicates, seed 42).}
+\label{tab:reliability}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Quantity & LR & RoBERTa & $\Delta$ \\
+\midrule
+Seed 42 test & 0.8916 & 0.8992 & $+$0.0075 \\
+Seed 123 test & 0.9082 & 0.8915 & $-$0.0167 \\
+Seed 2026 test & 0.8708 & 0.8689 & $-$0.0019 \\
+Mean (SD) over seeds & 0.8902 (0.0187) & 0.8865 (0.0157) & $-$0.0037 \\
+\addlinespace
+Seed 42 95\% CI & [0.8492, 0.9373] & [0.8607, 0.9624] & [$-$0.0143, 0.0252] \\
+Seed 42 $p$, hotel swap & \multicolumn{3}{r}{0.742} \\
+Seed 42 $p$, review swap$^\dagger$ & \multicolumn{3}{r}{0.864} \\
+\addlinespace
+5-fold 95\% CI & [0.8593, 0.8987] & [0.8791, 0.9067] & [$-$0.0107, 0.0349] \\
+5-fold $p$, hotel swap$^\dagger$ & \multicolumn{3}{r}{0.326} \\
+Hotels won (of 20) & 9 & 11 & -- \\
+\addlinespace
+Uppercase, $\Delta$ vs.\ clean & 0.0000 & $-$0.3261 & -- \\
+Whitespace, $\Delta$ vs.\ clean & 0.0000 & $-$0.5658 & -- \\
+Both, $\Delta$ vs.\ clean & 0.0000 & $-$0.5658 & -- \\
+Predictions changed (of 240) & 0 / 0 / 0 & 109 / 142 / 142 & -- \\
+\bottomrule
+\multicolumn{4}{@{}l}{$^\dagger$Exploratory analysis added after the protocol.}
+\end{tabular}
+\end{table}
